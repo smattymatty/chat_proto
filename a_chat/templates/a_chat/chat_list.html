@@ -1,0 +1,27 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+<div id="chat-list" class="unmarked-list">
+{% for room in chat_rooms %}
+<div>
+    <a href="{% url 'chat:chat_home' room.name %}">
+        <button class="chat-list-btn sb-flex w-full sb-my-2 sb-p-2 sb-px-8 sb-cursor-pointer"> 
+        {{ room.name }} - - {{ room.users_joined.count }} online
+        </button>
+    </a>
+</div>
+{% endfor %}
+</div>
+
+<form
+    class="sb-mt-4 sb-pt-4 sb-border-primary sb-border-t-4 sb-border-0 sb-flex sb-flex-col sb-justify-center sb-items-center"
+    method="post"
+>
+    {% csrf_token %}
+    {{form}}
+    <button type="submit" class="sb-flex sb-text-center sb-px-4 sb-py-2 sb-m-2">
+        Create New Room
+    </button>
+</form>
+
+{% endblock %}

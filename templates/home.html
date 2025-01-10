@@ -1,0 +1,45 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %} 
+
+<div class="sb-flex sb-items-center sb-justify-start sb-flex-col sb-w-2/3
+  sb-m-2 sb-p-2">
+  <h2 class="sb-secondary">{{ chat_room.name }}</h2>
+  <a 
+  href="{% url 'chat:chat_list' %}">
+  <button class="sb-flex w-full sb-p-2 sb-cursor-pointer"> 
+  Chat List
+  </button></a>
+</div>
+<div class="sb-absolute sb-bottom-0 sb-w-full">
+  <div class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-full">
+    <div class="sb-flex sb-w-full">
+      <div 
+      id="chat-room"
+      hx-trigger="load"
+      hx-get="/chat/chatroom/{{ chat_room.name }}/"
+      ></div>
+      <div 
+      id="online-count"
+      hx-trigger="load"
+      hx-get="/chat/online_count/{{ chat_room.name }}/"
+      ></div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block javascript %}
+
+<script>
+  function scrollToBottom() {
+    const container = document.getElementById("messages");
+    if (container == null) {
+        return;
+    }
+    container.scrollTop = container.scrollHeight;
+  }
+</script>
+
+{% endblock %}

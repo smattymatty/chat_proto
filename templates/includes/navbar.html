@@ -1,0 +1,26 @@
+
+{% load static %}
+<div class="sb-w-full sb-border-0 sb-border-b-2 sb-border-secondary sb-flex sb-pb-2">
+    <div class="sb-flex sb-grow">
+        <a href="{% url 'home' %}" class="sb-flex-grow sb-flex-shrink-0 sb-p-2 sb-text-secondary">
+            <img src="{% static 'images/logo.png' %}" class="sb-w-8 sb-h-8">
+        </a>
+    </div>
+    <div class="sb-flex sb-shrink">
+        {% if request.user.is_authenticated %}
+            <a href="{% url 'users:profile' user.username %}" class="sb-flex-grow-0 sb-flex-shrink-0 sb-p-2 sb-secondary">
+                {{ request.user.username }}
+            </a>
+            <a href="{% url 'account_logout' %}" class="sb-flex-grow-0 sb-flex-shrink-0 sb-p-2 sb-error">
+                Logout
+            </a>
+        {% else %}
+            <a href="{% url 'account_login' %}" class="sb-flex-grow-0 sb-flex-shrink-0 sb-p-2 sb-secondary">
+                Login
+            </a>
+            <a href="{% url 'account_signup' %}" class="sb-flex-grow-0 sb-flex-shrink-0 sb-p-2 sb-secondary">
+                Sign Up
+            </a>
+        {% endif %}
+    </div>
+</div>

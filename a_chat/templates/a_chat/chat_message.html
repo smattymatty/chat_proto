@@ -1,0 +1,20 @@
+
+<li>
+    {% if message.author == user %}
+    <div class="sb-flex sb-items-end sb-justify-end sb-flex-col sb-w-full">
+    <span class="message-username own-message-username">
+        {{ message.author.username }}
+    </span>
+    </div>
+    <p class="message-body">
+    {{ message.body }}
+    </p>
+    {% else %}
+    <span class="message-username">
+        {{ message.author.username }}
+    </span>
+    <p class="message-body">
+    {{ message.body }}
+    </p>
+    {% endif %}
+</li>

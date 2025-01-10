@@ -1,0 +1,14 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+<div class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-2/3 sb-m-2 sb-p-2">
+    <div class="sb-bg-white sb-rounded-lg sb-p-6 sb-shadow-md sb-w-2/3">
+        <h3 class="sb-text-xl sb-font-semibold sb-mb-4">{{ profile.user.username }}'s Profile</h3>
+        <div class="sb-space-y-3">
+            <p>Username: {{ profile.user.username }}</p>
+            <p>Email: {{ profile.user.email }}</p>
+            <p>Info: {{ profile.info }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

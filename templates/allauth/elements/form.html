@@ -1,0 +1,8 @@
+{% load allauth %}
+<form method="{{ attrs.method }}" action="{{ attrs.action }}"
+class="sb-secondary">
+    {% slot body %}
+    {% endslot %}
+    {% slot actions %}
+    {% endslot %}
+</form>

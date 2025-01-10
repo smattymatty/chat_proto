@@ -1,0 +1,23 @@
+{% extends 'layouts/blank.html' %}
+{% block content %}
+<div class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-2/3 sb-m-2 sb-p-2">
+    <h2 class="sb-secondary">Welcome to Chat Room Prototype</h2>
+    <a href="{% url 'chat:chat_list' %}">
+        <button class="sb-flex w-full sb-p-2 sb-cursor-pointer sb-mb-6">
+            Chat List
+        </button>
+    </a>
+</div>
+
+<div id="information-for-home">
+    <div class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-full sb-gap-4">
+        <div class="sb-bg-white sb-rounded-lg sb-p-6 sb-shadow-md sb-w-2/3">
+            <h3 class="sb-text-xl sb-font-semibold sb-mb-4">Getting Started</h3>
+            <div class="sb-space-y-3">
+                <p>1. Click on "Chat List" to see available rooms</p>
+                <p>2. Select a room to join the conversation</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
