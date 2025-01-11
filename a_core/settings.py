@@ -32,8 +32,11 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     'seal-app-23xog.ondigitalocean.app',
 ]
+CSRF_TRUSTED_ORIGINS = ['https://seal-app-23xog.ondigitalocean.app']
 
-
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 # Application definition
 
@@ -56,6 +59,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     "django_htmx.middleware.HtmxMiddleware",
     'django.middleware.common.CommonMiddleware',
