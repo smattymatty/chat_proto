@@ -1,0 +1,85 @@
+body {
+  background-color: rgb(20, 24, 28);
+}
+
+.chatroom-messages {
+  padding: 0px;
+  width: 100%;
+  max-height: 18rem;
+  min-height: 18rem;
+  overflow-y: scroll;
+}
+
+.chatroom-messages li::marker {
+  content: "";
+}
+
+.unmarked-list li::marker {
+  content: "";
+}
+
+.chat-list-btn {
+  width: 100%;
+  text-align: center;
+}
+
+.chatroom-messages li {
+  padding-top: 0.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.message-username {
+  color: rgba(0, 0, 0, 0.466);
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.308);
+  border-right: 1px solid rgba(0, 0, 0, 0.308);
+  padding-right: 0.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.3rem;
+  border-bottom-right-radius: 10%;
+  box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.582);
+}
+
+.own-message-username {
+  color: rgba(0, 82, 0, 0.603);
+  text-align: right;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 82, 0, 0.603);
+  border-left: 1px solid rgba(0, 82, 0, 0.603);
+  padding-right: 0.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.1rem;
+  padding-left: 0.3rem;
+  border-bottom-left-radius: 10%;
+  box-shadow: -1px 1px 2px 0 rgba(0, 82, 0, 0.603);
+}
+
+.message-body {
+  color: rgrgba(0, 0, 0, 0.815);
+  text-align: center;
+  width: 100%;
+}
+
+.users-online-list {
+  padding: 0px;
+  width: 100%;
+  max-height: 18rem;
+  min-height: 18rem;
+}
+
+.users-online-list-item {
+  padding-top: 0.2rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.full-form div {
+  display: flex;
+  flex-grow: 1;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
