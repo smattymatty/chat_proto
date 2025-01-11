@@ -11,7 +11,6 @@ Django==5.1.4
 django-allauth==65.3.1
 django-htmx==1.21.0
 django-spellbook==0.1.1
-gunicorn==23.0.0
 hyperlink==21.0.0
 idna==3.10
 incremental==24.7.2
