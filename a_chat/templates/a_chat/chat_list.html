@@ -12,7 +12,17 @@
 </div>
 {% endfor %}
 </div>
-
+{% if user.profile.is_guest %}
+<div class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-full sb-gap-4">
+    <div class="sb-bg-white sb-rounded-lg sb-p-6 sb-shadow-md sb-w-2/3">
+        <h3 class="sb-text-xl sb-font-semibold sb-mb-4">Guest Mode</h3>
+        <div class="sb-space-y-3">
+            <p>You are currently in guest mode.</p>
+            <p>To create a new chat room, please login.</p>
+        </div>
+    </div>
+</div>
+{% else %}
 <form
     class="sb-mt-4 sb-pt-4 sb-border-primary sb-border-t-4 sb-border-0 sb-flex sb-flex-col sb-justify-center sb-items-center"
     method="post"
@@ -23,5 +33,5 @@
         Create New Room
     </button>
 </form>
-
+{% endif %}
 {% endblock %}

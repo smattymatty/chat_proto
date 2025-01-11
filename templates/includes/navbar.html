@@ -11,14 +11,23 @@
             <a href="{% url 'users:profile' user.username %}" class="sb-flex-grow-0 sb-flex-shrink-0 sb-p-2 sb-secondary">
                 {{ request.user.username }}
             </a>
+            {% if request.user.profile.is_guest %}
+                <a href="{% url 'account_login' %}" class="sb-primary sb-flex-grow-0 sb-flex-shrink-0 sb-p-2">
+                    Login
+                </a>
+                <a href="{% url 'account_signup' %}" class="sb-success sb-flex-grow-0 sb-flex-shrink-0 sb-p-2">
+                    Sign Up
+                </a>
+            {% else %}
             <a href="{% url 'account_logout' %}" class="sb-flex-grow-0 sb-flex-shrink-0 sb-p-2 sb-error">
                 Logout
             </a>
+            {% endif %}
         {% else %}
-            <a href="{% url 'account_login' %}" class="sb-flex-grow-0 sb-flex-shrink-0 sb-p-2 sb-secondary">
+            <a href="{% url 'account_login' %}" class="sb-flex-grow-0 sb-flex-shrink-0 sb-p-2 sb-primary">
                 Login
             </a>
-            <a href="{% url 'account_signup' %}" class="sb-flex-grow-0 sb-flex-shrink-0 sb-p-2 sb-secondary">
+            <a href="{% url 'account_signup' %}" class="sb-success sb-flex-grow-0 sb-flex-shrink-0 sb-p-2">
                 Sign Up
             </a>
         {% endif %}

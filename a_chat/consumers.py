@@ -4,18 +4,33 @@ from django.shortcuts import get_object_or_404
 from django.template.loader import render_to_string
 from asgiref.sync import async_to_sync
 from channels.generic.websocket import WebsocketConsumer
+from django.contrib.auth.models import AnonymousUser
 
 from .models import *
 
 class ChatroomConsumer(WebsocketConsumer):
     def connect(self):
-        self.user = self.scope["user"]
-        self.chatroom_name = self.scope['url_route']['kwargs'][
-            'chatroom_name'
-        ]
-        self.chatroom = get_object_or_404(
-            ChatRoom, name=self.chatroom_name
-            )
+        # Get user, handling both authenticated and guest users
+        user = self.scope["user"]
+        if isinstance(user, AnonymousUser):
+            # If no user is authenticated, check for guest session
+            session = self.scope.get('session', {})
+            guest_user_id = session.get('guest_user_id')
+            if guest_user_id:
+                try:
+                    self.user = User.objects.get(id=guest_user_id)
+                except User.DoesNotExist:
+                    self.close()
+                    return
+            else:
+                self.close()
+                return
+        else:
+            self.user = user._wrapped if hasattr(user, "_wrapped") else user
+
+        self.chatroom_name = self.scope['url_route']['kwargs']['chatroom_name']
+        self.chatroom = get_object_or_404(ChatRoom, name=self.chatroom_name)
+        
         # add this for channel layer
         async_to_sync(self.channel_layer.group_add)(
             self.chatroom_name,
@@ -26,7 +41,7 @@ class ChatroomConsumer(WebsocketConsumer):
         if self.user not in self.chatroom.users_joined.all():
             self.chatroom.users_joined.add(self.user)
             self.update_online_count()
-        
+            
         self.accept()
         
     def disconnect(self, close_code):

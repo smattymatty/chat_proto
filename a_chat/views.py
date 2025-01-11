@@ -13,6 +13,8 @@ def chat_home(request, room_name):
 def chat_list(request):
     form = ChatRoomCreateForm()
     if request.method == 'POST':
+        if request.user.profile.is_guest:
+            return redirect('chat:chat_list')
         form = ChatRoomCreateForm(request.POST)
         if form.is_valid():
             chat_room = form.save()
@@ -24,7 +26,6 @@ def chat_list(request):
     }
     return render(request, 'a_chat/chat_list.html', context)
 
-@login_required
 def open_chatroom(request, room_name):
     template = 'a_chat/chat_room.html'
     
@@ -68,3 +69,8 @@ def online_count(request, room_name):
         'online_count': online_count,
     }
     return render(request, template, context)
+
+def delete_chatroom(request, room_name):
+    chat_room = get_object_or_404(ChatRoom, name=room_name)
+    chat_room.delete()
+    return redirect('chat:chat_list')
