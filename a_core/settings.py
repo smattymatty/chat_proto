@@ -29,10 +29,10 @@ DEBUG = config('DEBUG', cast=bool)
 
 ALLOWED_HOSTS = [
     'localhost',
-    'seal-app-23xog.ondigitalocean.app',
     '127.0.0.1',
-    'https://seal-app-23xog.ondigitalocean.app/',
+    'seal-app-23xog.ondigitalocean.app',
 ]
+
 
 
 # Application definition
