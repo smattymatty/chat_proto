@@ -2,8 +2,8 @@
 {% extends 'layouts/blank.html' %}
 
 {% block content %}
-<div class="sb-secondary">
-    <h1>Find Game</h1>
+<div class="sb-secondary sb-flex sb-flex-col">
+    <h1 class="sb-text-center">Find Game</h1>
     <p class="sb-text-center">Find a game to play</p>
     <div 
     class="sb-flex sb-gap-4 sb-md:flex-wrap sb-flex-wrap sb-mb-n
@@ -14,6 +14,17 @@
         {% endfor %}
     </div>
     <div class="sb-border-t-4 sb-border-primary sb-w-full sb-mb-4"></div>
+    {% if user.profile.is_guest %}
+        <div class="sb-black sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-full sb-gap-4">
+            <div class="sb-bg-white sb-rounded-lg sb-p-6 sb-shadow-md sb-w-2/3">
+                <h3 class="sb-text-xl sb-font-semibold sb-mb-4">Guest Mode</h3>
+                <div class="sb-space-y-3">
+                    <p>You are currently in guest mode.</p>
+                    <p>To create a new game, please login.</p>
+                </div>
+            </div>
+        </div>
+    {% else %}
     <form method="post">
         {% csrf_token %}
         {{form}}
@@ -24,5 +35,6 @@
             Create Game
         </button>
     </form>
+    {% endif %}
 </div>
 {% endblock %}

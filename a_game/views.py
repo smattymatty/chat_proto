@@ -21,12 +21,14 @@ def game_home(request):
                 print(f"New Game: {new_game}")
                 return redirect('game:play', game_name=new_game.name)
             else:
-                # Handle game creation failure
-                form.add_error(None, "Failed to create game. Please try again.")
+                print(f"Form Errors: {form.errors}")
+                return redirect('game:home')
         else:
             print(f"Form Errors: {form.errors}")
-    
-    form = GameCreateForm()
+    if not request.user.profile.is_guest:
+        form = GameCreateForm()
+    else:
+        form = ""
     games = Game.objects.all().filter(state='in_queue')
     context = {
         'games': games,

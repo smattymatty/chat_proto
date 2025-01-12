@@ -5,13 +5,14 @@ import random
 import string
 
 def create_game(user, game_type):
+    if user.profile.is_guest:
+        raise Exception("Guest users cannot create games")
     def get_game_name(user, game_type):
-        return f"{user.username[0:2]}-{str(game_type)[0:1]}-" + ''.join(
+        return f"{user.username[0:1]}-{str(game_type)[0:1]}-" + ''.join(
             random.choices(
-                string.ascii_uppercase + string.digits, k=6
+                string.ascii_uppercase + string.digits, k=8
                 )
-            )
-        
+            ) + f"-{user.username[-1:]}-{game_type[-1:]}"
     try:
         # create the game's chat room
         new_chat_room = ChatRoom.objects.create(
