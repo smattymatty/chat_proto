@@ -1,0 +1,28 @@
+
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+<div class="sb-secondary">
+    <h1>Find Game</h1>
+    <p class="sb-text-center">Find a game to play</p>
+    <div 
+    class="sb-flex sb-gap-4 sb-md:flex-wrap sb-flex-wrap sb-mb-n
+    sb-md:flex-row sb-flex-col sb-mb-4"
+    >
+        {% for game in games %}
+            {% include 'a_game/partials/listed_game.html' %}
+        {% endfor %}
+    </div>
+    <div class="sb-border-t-4 sb-border-primary sb-w-full sb-mb-4"></div>
+    <form method="post">
+        {% csrf_token %}
+        {{form}}
+        <button 
+        type="submit"
+        class="sb-w-full sb-mt-2 sb-p-2 sb-cursor-pointer sb-mb-6"
+        >
+            Create Game
+        </button>
+    </form>
+</div>
+{% endblock %}

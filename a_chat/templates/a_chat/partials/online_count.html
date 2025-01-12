@@ -10,7 +10,8 @@ hx-swap-oob="outerHTML"
         id="users-online-list"
         class="users-online-list">
             {% for user in chat_room.users_joined.all %}
-            <div class="users-online-list-item">{{user.username}}</div>
+            <div class="users-online-list-item">{{user.username}}
+            </div>
             {% endfor %}
         </div>
     </div>

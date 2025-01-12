@@ -2,6 +2,11 @@
 {% block content %}
 <div class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-2/3 sb-m-2 sb-p-2">
     <h2 class="sb-secondary">Welcome to Chat Room Prototype</h2>
+    <a href="{% url 'game:home' %}">
+        <button class="sb-flex w-full sb-p-2 sb-cursor-pointer sb-mb-6">
+            Game List
+        </button>
+    </a>
     <a href="{% url 'chat:chat_list' %}">
         <button class="sb-flex w-full sb-p-2 sb-cursor-pointer sb-mb-6">
             Chat List

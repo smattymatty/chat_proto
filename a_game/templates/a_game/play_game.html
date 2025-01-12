@@ -1,0 +1,26 @@
+{% extends 'layouts/blank.html' %}
+
+{% block content %}
+<div class="sb-secondary">
+    <h1>Play Game</h1>
+    <h2>{{ game.name }}</h2>
+    <span>{{ game.created_at }}</span>
+    <p class="sb-text-center">Play a game</p>
+</div>
+<div class="sb-absolute sb-bottom-0 sb-w-full">
+  <div class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-full">
+    <div class="sb-flex sb-w-full">
+      <div 
+      id="chat-room"
+      hx-trigger="load"
+      hx-get="/chat/chatroom/{{ chat_room.name }}/"
+      ></div>
+      <div 
+      id="online-count"
+      hx-trigger="load"
+      hx-get="/chat/online_count/{{ chat_room.name }}/"
+      ></div>
+    </div>
+  </div>
+</div>
+{% endblock %}

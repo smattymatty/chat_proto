@@ -53,9 +53,11 @@ INSTALLED_APPS = [
     'a_home.apps.AHomeConfig',
     'a_chat.apps.AChatConfig',
     'a_users.apps.AUsersConfig',
+    'a_game.apps.AGameConfig',
 ]
 
 MIDDLEWARE = [
+    'django_unused_context.middleware.UnusedContextMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

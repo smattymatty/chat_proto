@@ -18,16 +18,19 @@ class GuestMiddleware:
         _ = user.is_authenticated  # Trigger actual evaluation of the lazy object
 
         # Define auth-related URL names that should trigger guest logout
-        auth_urls = ['account_login', 'account_signup', 'account_reset_password']
+        auth_urls = [
+            'account_login', 
+            'account_signup', 
+            'account_reset_password',
+            'login', 
+            'logout',
+        ]
 
         # Check if the current URL is an auth URL
         current_url = resolve(request.path_info).url_name
         is_auth_url = current_url in auth_urls
-        print(f"GuestMiddleware: is_auth_url = {is_auth_url}")
         if is_auth_url:
             return self.get_response(request)
-
-
 
         # Handle guest user logic
         if not request.user.is_authenticated:
@@ -52,7 +55,6 @@ class GuestMiddleware:
             guest_id = guest_user.profile.guest_id  # Assuming `guest_id` is stored in Profile
             request.session['guest_id'] = guest_id
             request.session['guest_user_id'] = guest_user.id
-            print(f"Created new guest user: {guest_user.username}")
         else:
             # Try retrieving existing guest user
             guest_user_id = request.session.get('guest_user_id')
@@ -60,14 +62,11 @@ class GuestMiddleware:
             if not guest_user:
                 # If guest user doesn't exist, restart flow
                 self._logout_guest(request)
-                print("Guest user not found, restarting flow.")
                 self._handle_guest_user(request)
                 return
-            print(f"Using existing guest user: {guest_user.username}")
 
         # Attach the guest user to the request
         request.user = guest_user
-        print(f"GuestMiddleware: request.user set to {request.user.username}")
 
     def _create_guest_user(self):
         """Creates and returns a new guest user."""
