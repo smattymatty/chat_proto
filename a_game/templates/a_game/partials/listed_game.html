@@ -1,7 +1,19 @@
 <div class="sb-flex-wrap sb-flex sb-flex-col sb-grow sb-p-4 sb-bg-white sb-rounded-lg">
-    <h2 class="sb-black sb-text-xl sb-font-semibold sb-mb-4">{{ game.name }}</h2>
+    <p class="sb-text-center sb-mb-n2">
+        Created at {{ game.created_at }}
+    </p>
+    <h2 class="sb-black sb-text-center sb-text-xl sb-font-semibold sb-mb-4">{{ game.name }}</h2>
+    <p class="sb-text-center sb-mt-n2">
+        By {{ game.player_group.player_1.user.username }}
+    </p>
     <p class="sb-text-center">
-        <a href="{% url 'game:play' game.name %}" class="sb-primary sb-text-center">
+        {{ game.chat_room.users_joined.count }} Players
+    </p>
+    <p class="sb-text-center">
+        State: {{ game.state }}
+    </p>
+    <p class="sb-text-center">
+        <a href="{% url 'game:play' game.name %}" class="sb-text-xl sb-primary sb-text-center">
             Play
         </a>
     </p>

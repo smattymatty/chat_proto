@@ -24,9 +24,7 @@
             Start Game
         </button>
       {% else %}
-      <button class="sb-text-center w-full sb-p-2 sb-cursor-pointer sb-mb-6">
-          Next State
-      </button>
+      {% include 'a_game/partials/widgets/state_change_button.html' with state=game.state %}
       {% endif %}
 </div>
 

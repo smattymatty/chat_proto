@@ -1,6 +1,9 @@
 <div id="games-list" class="sb-w-full">
     <div id="games-list-header" class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-full sb-mb-2">
         {% if started == 'true' %}
+        <p class="sb-text-center">
+            Currently Showing Games in Progress
+        </p>
         <button
             id="games-list-button"
             class="sb-px-4 sb-py-2 sb-rounded"
@@ -11,6 +14,9 @@
             Show Games in Queue
         </button>
         {% else %}
+        <p class="sb-text-center">
+            Currently Showing Games in Queue
+        </p>
         <button
             id="games-list-button"
             class="sb-px-4 sb-py-2 sb-rounded"

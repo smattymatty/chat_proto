@@ -1,0 +1,23 @@
+<button 
+class="sb-px-4 sb-py-2 sb-rounded sb-text-white"
+id="state-change-button"
+hx-swap-oob="true"
+hx-swap="innerHTML"
+hx-post="{% url 'game:update_state' game.name %}"
+{% if state == 'morning' %}
+hx-vals='{"state": "day"}'
+{% elif state == 'day' %}
+hx-vals='{"state": "night"}'
+{% elif state == 'night' %}
+hx-vals='{"state": "morning"}'
+{% endif %}
+hx-target="#game-state"
+>
+{% if state == 'morning' %}
+    Change to Day
+{% elif state == 'day' %}
+    Change to Night
+{% elif state == 'night' %}
+    Change to Morning
+{% endif %}
+</button>

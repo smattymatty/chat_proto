@@ -1,33 +1,43 @@
-<div 
-class="sb-w-1/3 sb-h-32 sb-border-t-4 sb-border-b-8 sb-border-l sb-border-r
-    sb-border-solid sb-border-primary sb-bg-white"
-id="chat-room"
-hx-swap-oob="outerHTML"
-_="on htmx:afterSettle scrollToBottom()"
+{% load static %}
+<div
+  class="chat-room-md sb-border-t-4 sb-border-b-8 sb-border-l sb-border-r
+   sb-border-solid sb-border-primary sb-bg-white sb-relative"
+  id="chat-room"
+  hx-swap-oob="outerHTML"
+  _="on htmx:afterSettle scrollToBottom()"
 >
-    <div 
-    class="sb-flex sb-grow sb-items-center sb-justify-center sb-flex-col"
-    >
-        <ul 
-        id="messages"
-        class="chatroom-messages"
-        >
-            {% for message in messages reversed %}
-            {% include 'a_chat/chat_message.html' %}
-            {% endfor %}
+  <div
+    id="chat-room-header"
+    class="sb-flex sb-items-end sb-justify-end sb-w-full sb-gap-2"
+  >
+    <button id="chat-room-plus-button">+</button>
+    <button id="chat-room-expand-button">></button>
 
-        </ul>
-    </div>
-    <form 
-    class="full-form sb-mb-4 sb-mt-1 sb-flex sb-justify-center sb-w-full" 
+    <button id="chat-room-close-button">X</button>
+  </div>
+
+  <div
+    class="sb-flex sb-grow sb-items-center sb-justify-center sb-flex-col"
+  >
+    <ul
+      id="messages"
+      class="chatroom-messages"
+    >
+      {% for message in messages reversed %}
+        {% include 'a_chat/chat_message.html' %}
+      {% endfor %}
+    </ul>
+  </div>
+
+  <form
+    class="full-form sb-mb-4 sb-mt-1 sb-flex sb-justify-center sb-w-full"
     method="post"
     hx-ext="ws"
     ws-connect="/ws/chatroom/{{ chat_room.name }}"
     ws-send
     _="on htmx:wsAfterSend reset() me"
-    >
-        {% csrf_token %}
-        {{ form }}
-    </form>
+  >
+    {% csrf_token %}
+    {{ form }}
+  </form>
 </div>
-<script>scrollToBottom()</script>

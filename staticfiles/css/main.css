@@ -83,3 +83,30 @@ body {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
+.chat-room-sm {
+  width: 25%;
+}
+
+.chat-room-md {
+  width: 50%;
+}
+
+.chat-room-lg {
+  width: 75%;
+  height: 200%;
+}
+
+.chat-side-button {
+  right: -5%;
+  bottom: 5%;
+  max-width: 22px;
+  height: 90%;
+  opacity: 0.5;
+  border: none;
+}
+
+.chat-side-button:hover {
+  cursor: pointer;
+  width: 0.8rem;
+}
