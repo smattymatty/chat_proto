@@ -2,16 +2,19 @@
 {% extends 'layouts/blank.html' %}
 
 {% block content %}
-<div class="sb-secondary sb-flex sb-flex-col">
-    <h1 class="sb-text-center">Find Game</h1>
-    <p class="sb-text-center">Find a game to play</p>
+<div class="sb-secondary sb-flex sb-flex-col sb-w-full sb-px-4">
+  <h1 class="sb-text-center">Find Game</h1>
+  <p class="sb-text-center">Find a game to play</p>
+  
+  <div class="sb-flex sb-flex-col sb-gap-4">
     <div 
+    id="games-list"
     class="sb-flex sb-gap-4 sb-md:flex-wrap sb-flex-wrap sb-mb-n
     sb-md:flex-row sb-flex-col sb-mb-4"
+    hx-get="{% url 'game:list' 'false' %}"
+    hx-trigger="load"
+    hx-swap="outerHTML"
     >
-        {% for game in games %}
-            {% include 'a_game/partials/listed_game.html' %}
-        {% endfor %}
     </div>
     <div class="sb-border-t-4 sb-border-primary sb-w-full sb-mb-4"></div>
     {% if user.profile.is_guest %}

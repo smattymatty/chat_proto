@@ -1,0 +1,32 @@
+<div id="games-list" class="sb-w-full">
+    <div id="games-list-header" class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-full sb-mb-2">
+        {% if started == 'true' %}
+        <button
+            id="games-list-button"
+            class="sb-px-4 sb-py-2 sb-rounded"
+            hx-get="{% url 'game:list' 'false' %}"
+            hx-target="#games-list"
+            hx-swap="outerHTML"
+        >
+            Show Games in Queue
+        </button>
+        {% else %}
+        <button
+            id="games-list-button"
+            class="sb-px-4 sb-py-2 sb-rounded"
+            hx-get="{% url 'game:list' 'true' %}"
+            hx-target="#games-list"
+            hx-swap="outerHTML"
+        >
+            Show Games in Progress
+        </button>
+        {% endif %}
+    </div>
+    <div 
+    class="sb-flex sb-gap-4 sb-flex-wrap sb-px-4"
+    >
+        {% for game in games %}
+            {% include 'a_game/partials/listed_game.html' %}
+        {% endfor %}
+    </div>
+</div>

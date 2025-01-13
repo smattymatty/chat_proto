@@ -1,12 +1,38 @@
 {% extends 'layouts/blank.html' %}
 
 {% block content %}
-<div class="sb-secondary">
+<div class="sb-flex sb-flex-col sb-gap-4 sb-secondary">
+  <a href="{% url 'game:home' %}">
+    <button class="sb-text-center w-full sb-p-2 sb-cursor-pointer sb-mt-2">
+    Back
+    </button>
+  </a>
     <h1>Play Game</h1>
-    <h2>{{ game.name }}</h2>
+    <h2>State: <span id="game-state">{{ game.state }}</span></h2>
     <span>{{ game.created_at }}</span>
     <p class="sb-text-center">Play a game</p>
+      {% if game.state == 'in_queue' %}
+        <button 
+        id="state-change-button"
+        hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+        hx-post="{% url 'game:update_state' game.name %}"
+        hx-target="#game-state"
+        hx-swap="innerHTML"
+        hx-vals='{"state": "morning"}'
+        class="sb-text-center w-full sb-p-2 sb-cursor-pointer sb-mb-6"
+        >
+            Start Game
+        </button>
+      {% else %}
+      <button class="sb-text-center w-full sb-p-2 sb-cursor-pointer sb-mb-6">
+          Next State
+      </button>
+      {% endif %}
 </div>
+
+
+
+
 <div class="sb-absolute sb-bottom-0 sb-w-full">
   <div class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-full">
     <div class="sb-flex sb-w-full">

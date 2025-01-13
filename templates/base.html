@@ -26,13 +26,13 @@
 
     {% block javascript %}{% endblock %}
     <script>
-    function scrollToBottom() {
-        const container = document.getElementById("messages");
-        if (container == null) {
-            return;
+        function scrollToBottom() {
+            const container = document.getElementById("messages");
+            if (container == null) {
+                return;
+            }
+            container.scrollTop = container.scrollHeight;
         }
-        container.scrollTop = container.scrollHeight;
-    }
     </script>
 </body>
 </html>
