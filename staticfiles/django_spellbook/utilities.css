@@ -50,6 +50,419 @@
 .sb-bg-transparent {
   background-color: transparent;
 }
+/* variable background colors with opacity variants */
+.sb-bg-primary-25 {
+  background-color: color-mix(
+    in srgb,
+    var(--primary-color, #3b82f6) 25%,
+    transparent
+  );
+}
+.sb-bg-primary-50 {
+  background-color: color-mix(
+    in srgb,
+    var(--primary-color, #3b82f6) 50%,
+    transparent
+  );
+}
+.sb-bg-primary-75 {
+  background-color: color-mix(
+    in srgb,
+    var(--primary-color, #3b82f6) 75%,
+    transparent
+  );
+}
+.sb-bg-secondary-25 {
+  background-color: color-mix(
+    in srgb,
+    var(--secondary-color, #6b7280) 25%,
+    transparent
+  );
+}
+.sb-bg-secondary-50 {
+  background-color: color-mix(
+    in srgb,
+    var(--secondary-color, #6b7280) 50%,
+    transparent
+  );
+}
+.sb-bg-secondary-75 {
+  background-color: color-mix(
+    in srgb,
+    var(--secondary-color, #6b7280) 75%,
+    transparent
+  );
+}
+.sb-bg-accent-25 {
+  background-color: color-mix(
+    in srgb,
+    var(--accent-color, #f59e0b) 25%,
+    transparent
+  );
+}
+.sb-bg-accent-50 {
+  background-color: color-mix(
+    in srgb,
+    var(--accent-color, #f59e0b) 50%,
+    transparent
+  );
+}
+.sb-bg-accent-75 {
+  background-color: color-mix(
+    in srgb,
+    var(--accent-color, #f59e0b) 75%,
+    transparent
+  );
+}
+.sb-bg-neutral-25 {
+  background-color: color-mix(
+    in srgb,
+    var(--neutral-color, #2563eb) 25%,
+    transparent
+  );
+}
+.sb-bg-neutral-50 {
+  background-color: color-mix(
+    in srgb,
+    var(--neutral-color, #2563eb) 50%,
+    transparent
+  );
+}
+.sb-bg-neutral-75 {
+  background-color: color-mix(
+    in srgb,
+    var(--neutral-color, #2563eb) 75%,
+    transparent
+  );
+}
+.sb-bg-error-25 {
+  background-color: color-mix(
+    in srgb,
+    var(--error-color, #dc2626) 25%,
+    transparent
+  );
+}
+.sb-bg-error-50 {
+  background-color: color-mix(
+    in srgb,
+    var(--error-color, #dc2626) 50%,
+    transparent
+  );
+}
+.sb-bg-error-75 {
+  background-color: color-mix(
+    in srgb,
+    var(--error-color, #dc2626) 75%,
+    transparent
+  );
+}
+.sb-bg-warning-25 {
+  background-color: color-mix(
+    in srgb,
+    var(--warning-color, #f59e0b) 25%,
+    transparent
+  );
+}
+.sb-bg-warning-50 {
+  background-color: color-mix(
+    in srgb,
+    var(--warning-color, #f59e0b) 50%,
+    transparent
+  );
+}
+.sb-bg-warning-75 {
+  background-color: color-mix(
+    in srgb,
+    var(--warning-color, #f59e0b) 75%,
+    transparent
+  );
+}
+.sb-bg-success-25 {
+  background-color: color-mix(
+    in srgb,
+    var(--success-color, #16a34a) 25%,
+    transparent
+  );
+}
+.sb-bg-success-50 {
+  background-color: color-mix(
+    in srgb,
+    var(--success-color, #16a34a) 50%,
+    transparent
+  );
+}
+.sb-bg-success-75 {
+  background-color: color-mix(
+    in srgb,
+    var(--success-color, #16a34a) 75%,
+    transparent
+  );
+}
+.sb-bg-info-25 {
+  background-color: color-mix(
+    in srgb,
+    var(--info-color, #2563eb) 25%,
+    transparent
+  );
+}
+.sb-bg-info-50 {
+  background-color: color-mix(
+    in srgb,
+    var(--info-color, #2563eb) 50%,
+    transparent
+  );
+}
+.sb-bg-info-75 {
+  background-color: color-mix(
+    in srgb,
+    var(--info-color, #2563eb) 75%,
+    transparent
+  );
+}
+
+/* hover background colors */
+.sb-hover\:bg-black:hover {
+  background-color: #000;
+}
+.sb-hover\:bg-white:hover {
+  background-color: #fff;
+}
+.sb-hover\:bg-black-25:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--black-color, #000000) 25%,
+    transparent
+  );
+}
+.sb-hover\:bg-black-50:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--black-color, #000000) 50%,
+    transparent
+  );
+}
+.sb-hover\:bg-black-75:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--black-color, #000000) 75%,
+    transparent
+  );
+}
+.sb-hover\:bg-white-25:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--white-color, #ffffff) 25%,
+    transparent
+  );
+}
+.sb-hover\:bg-white-50:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--white-color, #ffffff) 50%,
+    transparent
+  );
+}
+.sb-hover\:bg-white-75:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--white-color, #ffffff) 75%,
+    transparent
+  );
+}
+.sb-hover\:bg-primary:hover {
+  background-color: var(--primary-color, #3b82f6);
+}
+.sb-hover\:bg-secondary:hover {
+  background-color: var(--secondary-color, #6b7280);
+}
+.sb-hover\:bg-accent:hover {
+  background-color: var(--accent-color, #f59e0b);
+}
+.sb-hover\:bg-neutral:hover {
+  background-color: var(--neutral-color, #2563eb);
+}
+.sb-hover\:bg-error:hover {
+  background-color: var(--error-color, #dc2626);
+}
+.sb-hover\:bg-warning:hover {
+  background-color: var(--warning-color, #f59e0b);
+}
+.sb-hover\:bg-success:hover {
+  background-color: var(--success-color, #16a34a);
+}
+.sb-hover\:bg-info:hover {
+  background-color: var(--info-color, #2563eb);
+}
+
+/* hover background colors with opacity variants */
+.sb-hover\:bg-primary-25:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--primary-color, #3b82f6) 25%,
+    transparent
+  );
+}
+.sb-hover\:bg-primary-50:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--primary-color, #3b82f6) 50%,
+    transparent
+  );
+}
+.sb-hover\:bg-primary-75:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--primary-color, #3b82f6) 75%,
+    transparent
+  );
+}
+.sb-hover\:bg-secondary-25:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--secondary-color, #6b7280) 25%,
+    transparent
+  );
+}
+.sb-hover\:bg-secondary-50:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--secondary-color, #6b7280) 50%,
+    transparent
+  );
+}
+.sb-hover\:bg-secondary-75:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--secondary-color, #6b7280) 75%,
+    transparent
+  );
+}
+.sb-hover\:bg-accent-25:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--accent-color, #f59e0b) 25%,
+    transparent
+  );
+}
+.sb-hover\:bg-accent-50:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--accent-color, #f59e0b) 50%,
+    transparent
+  );
+}
+.sb-hover\:bg-accent-75:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--accent-color, #f59e0b) 75%,
+    transparent
+  );
+}
+.sb-hover\:bg-neutral-25:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--neutral-color, #2563eb) 25%,
+    transparent
+  );
+}
+.sb-hover\:bg-neutral-50:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--neutral-color, #2563eb) 50%,
+    transparent
+  );
+}
+.sb-hover\:bg-neutral-75:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--neutral-color, #2563eb) 75%,
+    transparent
+  );
+}
+.sb-hover\:bg-error-25:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--error-color, #dc2626) 25%,
+    transparent
+  );
+}
+.sb-hover\:bg-error-50:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--error-color, #dc2626) 50%,
+    transparent
+  );
+}
+.sb-hover\:bg-error-75:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--error-color, #dc2626) 75%,
+    transparent
+  );
+}
+.sb-hover\:bg-warning-25:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--warning-color, #f59e0b) 25%,
+    transparent
+  );
+}
+.sb-hover\:bg-warning-50:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--warning-color, #f59e0b) 50%,
+    transparent
+  );
+}
+.sb-hover\:bg-warning-75:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--warning-color, #f59e0b) 75%,
+    transparent
+  );
+}
+.sb-hover\:bg-success-25:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--success-color, #16a34a) 25%,
+    transparent
+  );
+}
+.sb-hover\:bg-success-50:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--success-color, #16a34a) 50%,
+    transparent
+  );
+}
+.sb-hover\:bg-success-75:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--success-color, #16a34a) 75%,
+    transparent
+  );
+}
+.sb-hover\:bg-info-25:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--info-color, #2563eb) 25%,
+    transparent
+  );
+}
+.sb-hover\:bg-info-50:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--info-color, #2563eb) 50%,
+    transparent
+  );
+}
+.sb-hover\:bg-info-75:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--info-color, #2563eb) 75%,
+    transparent
+  );
+}
 /* Rounded */
 .sb-rounded-none {
   border-radius: 0;
@@ -289,6 +702,37 @@
 .sb-info {
   color: var(--info-color, #2563eb);
 }
+/* hovered colors */
+.sb-hover\:primary:hover {
+  color: var(--primary-color, #3b82f6);
+}
+.sb-hover\:secondary:hover {
+  color: var(--secondary-color, #6b7280);
+}
+.sb-hover\:accent:hover {
+  color: var(--accent-color, #f59e0b);
+}
+.sb-hover\:neutral:hover {
+  color: var(--neutral-color, #2563eb);
+}
+.sb-hover\:error:hover {
+  color: var(--error-color, #dc2626);
+}
+.sb-hover\:warning:hover {
+  color: var(--warning-color, #f59e0b);
+}
+.sb-hover\:success:hover {
+  color: var(--success-color, #16a34a);
+}
+.sb-hover\:info:hover {
+  color: var(--info-color, #2563eb);
+}
+.sb-hover\:black:hover {
+  color: #000;
+}
+.sb-hover\:white:hover {
+  color: #fff;
+}
 
 /* Theme Colors with Opacity Variants */
 .sb-primary-25 {
@@ -362,6 +806,298 @@
 }
 .sb-info-75 {
   color: color-mix(in srgb, var(--info-color, #2563eb) 75%, transparent);
+}
+
+/* hover variants with opacity for colors */
+.sb-hover\:primary-25:hover {
+  color: color-mix(in srgb, var(--primary-color, #3b82f6) 25%, transparent);
+}
+.sb-hover\:primary-50:hover {
+  color: color-mix(in srgb, var(--primary-color, #3b82f6) 50%, transparent);
+}
+.sb-hover\:primary-75:hover {
+  color: color-mix(in srgb, var(--primary-color, #3b82f6) 75%, transparent);
+}
+.sb-hover\:secondary-25:hover {
+  color: color-mix(in srgb, var(--secondary-color, #6b7280) 25%, transparent);
+}
+.sb-hover\:secondary-50:hover {
+  color: color-mix(in srgb, var(--secondary-color, #6b7280) 50%, transparent);
+}
+.sb-hover\:secondary-75:hover {
+  color: color-mix(in srgb, var(--secondary-color, #6b7280) 75%, transparent);
+}
+.sb-hover\:accent-25:hover {
+  color: color-mix(in srgb, var(--accent-color, #f59e0b) 25%, transparent);
+}
+.sb-hover\:accent-50:hover {
+  color: color-mix(in srgb, var(--accent-color, #f59e0b) 50%, transparent);
+}
+.sb-hover\:accent-75:hover {
+  color: color-mix(in srgb, var(--accent-color, #f59e0b) 75%, transparent);
+}
+.sb-hover\:neutral-25:hover {
+  color: color-mix(in srgb, var(--neutral-color, #2563eb) 25%, transparent);
+}
+.sb-hover\:neutral-50:hover {
+  color: color-mix(in srgb, var(--neutral-color, #2563eb) 50%, transparent);
+}
+.sb-hover\:neutral-75:hover {
+  color: color-mix(in srgb, var(--neutral-color, #2563eb) 75%, transparent);
+}
+.sb-hover\:error-25:hover {
+  color: color-mix(in srgb, var(--error-color, #dc2626) 25%, transparent);
+}
+.sb-hover\:error-50:hover {
+  color: color-mix(in srgb, var(--error-color, #dc2626) 50%, transparent);
+}
+.sb-hover\:error-75:hover {
+  color: color-mix(in srgb, var(--error-color, #dc2626) 75%, transparent);
+}
+.sb-hover\:warning-25:hover {
+  color: color-mix(in srgb, var(--warning-color, #f59e0b) 25%, transparent);
+}
+.sb-hover\:warning-50:hover {
+  color: color-mix(in srgb, var(--warning-color, #f59e0b) 50%, transparent);
+}
+.sb-hover\:warning-75:hover {
+  color: color-mix(in srgb, var(--warning-color, #f59e0b) 75%, transparent);
+}
+.sb-hover\:success-25:hover {
+  color: color-mix(in srgb, var(--success-color, #16a34a) 25%, transparent);
+}
+.sb-hover\:success-50:hover {
+  color: color-mix(in srgb, var(--success-color, #16a34a) 50%, transparent);
+}
+.sb-hover\:success-75:hover {
+  color: color-mix(in srgb, var(--success-color, #16a34a) 75%, transparent);
+}
+.sb-hover\:info-25:hover {
+  color: color-mix(in srgb, var(--info-color, #2563eb) 25%, transparent);
+}
+.sb-hover\:info-50:hover {
+  color: color-mix(in srgb, var(--info-color, #2563eb) 50%, transparent);
+}
+.sb-hover\:info-75:hover {
+  color: color-mix(in srgb, var(--info-color, #2563eb) 75%, transparent);
+}
+.sb-hover\:black-25:hover {
+  color: color-mix(in srgb, var(--black-color, #000000) 25%, transparent);
+}
+.sb-hover\:black-50:hover {
+  color: color-mix(in srgb, var(--black-color, #000000) 50%, transparent);
+}
+.sb-hover\:black-75:hover {
+  color: color-mix(in srgb, var(--black-color, #000000) 75%, transparent);
+}
+.sb-hover\:white-25:hover {
+  color: color-mix(in srgb, var(--white-color, #ffffff) 25%, transparent);
+}
+.sb-hover\:white-50:hover {
+  color: color-mix(in srgb, var(--white-color, #ffffff) 50%, transparent);
+}
+.sb-hover\:white-75:hover {
+  color: color-mix(in srgb, var(--white-color, #ffffff) 75%, transparent);
+}
+
+/* hover variants with opacity for border colors */
+.sb-hover\:border-primary-25:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--primary-color, #3b82f6) 25%,
+    transparent
+  );
+}
+.sb-hover\:border-primary-50:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--primary-color, #3b82f6) 50%,
+    transparent
+  );
+}
+.sb-hover\:border-primary-75:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--primary-color, #3b82f6) 75%,
+    transparent
+  );
+}
+.sb-hover\:border-secondary-25:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--secondary-color, #6b7280) 25%,
+    transparent
+  );
+}
+.sb-hover\:border-secondary-50:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--secondary-color, #6b7280) 50%,
+    transparent
+  );
+}
+.sb-hover\:border-secondary-75:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--secondary-color, #6b7280) 75%,
+    transparent
+  );
+}
+.sb-hover\:border-accent-25:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--accent-color, #f59e0b) 25%,
+    transparent
+  );
+}
+.sb-hover\:border-accent-50:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--accent-color, #f59e0b) 50%,
+    transparent
+  );
+}
+.sb-hover\:border-accent-75:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--accent-color, #f59e0b) 75%,
+    transparent
+  );
+}
+.sb-hover\:border-neutral-25:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--neutral-color, #2563eb) 25%,
+    transparent
+  );
+}
+.sb-hover\:border-neutral-50:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--neutral-color, #2563eb) 50%,
+    transparent
+  );
+}
+.sb-hover\:border-neutral-75:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--neutral-color, #2563eb) 75%,
+    transparent
+  );
+}
+.sb-hover\:border-error-25:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--error-color, #dc2626) 25%,
+    transparent
+  );
+}
+.sb-hover\:border-error-50:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--error-color, #dc2626) 50%,
+    transparent
+  );
+}
+.sb-hover\:border-error-75:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--error-color, #dc2626) 75%,
+    transparent
+  );
+}
+.sb-hover\:border-warning-25:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--warning-color, #f59e0b) 25%,
+    transparent
+  );
+}
+.sb-hover\:border-warning-50:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--warning-color, #f59e0b) 50%,
+    transparent
+  );
+}
+.sb-hover\:border-warning-75:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--warning-color, #f59e0b) 75%,
+    transparent
+  );
+}
+.sb-hover\:border-success-25:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--success-color, #16a34a) 25%,
+    transparent
+  );
+}
+.sb-hover\:border-success-50:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--success-color, #16a34a) 50%,
+    transparent
+  );
+}
+.sb-hover\:border-success-75:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--success-color, #16a34a) 75%,
+    transparent
+  );
+}
+.sb-hover\:border-info-25:hover {
+  border-color: color-mix(in srgb, var(--info-color, #2563eb) 25%, transparent);
+}
+.sb-hover\:border-info-50:hover {
+  border-color: color-mix(in srgb, var(--info-color, #2563eb) 50%, transparent);
+}
+.sb-hover\:border-info-75:hover {
+  border-color: color-mix(in srgb, var(--info-color, #2563eb) 75%, transparent);
+}
+.sb-hover\:border-black-25:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--black-color, #000000) 25%,
+    transparent
+  );
+}
+.sb-hover\:border-black-50:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--black-color, #000000) 50%,
+    transparent
+  );
+}
+.sb-hover\:border-black-75:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--black-color, #000000) 75%,
+    transparent
+  );
+}
+.sb-hover\:border-white-25:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--white-color, #ffffff) 25%,
+    transparent
+  );
+}
+.sb-hover\:border-white-50:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--white-color, #ffffff) 50%,
+    transparent
+  );
+}
+.sb-hover\:border-white-75:hover {
+  border-color: color-mix(
+    in srgb,
+    var(--white-color, #ffffff) 75%,
+    transparent
+  );
 }
 
 /* Display */

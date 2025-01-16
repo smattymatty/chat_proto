@@ -1,6 +1,6 @@
 {% load static %}
 <div
-  class="chat-room-md sb-border-t-4 sb-border-b-8 sb-border-l sb-border-r
+  class="chat-room sb-border-t-4 sb-border-b-8 sb-border-l sb-border-r
    sb-border-solid sb-border-primary sb-bg-white sb-relative"
   id="chat-room"
   hx-swap-oob="outerHTML"
@@ -8,12 +8,12 @@
 >
   <div
     id="chat-room-header"
-    class="sb-flex sb-items-end sb-justify-end sb-w-full sb-gap-2"
+    class="sb-flex sb-items-center sb-justify-end sb-w-full sb-gap-2"
   >
-    <button id="chat-room-plus-button">+</button>
-    <button id="chat-room-expand-button">></button>
+    <button id="chat-room-plus-button" class="sb-hidden">+</button>
+    <button id="chat-room-expand-button" class="sb-hidden">></button>
 
-    <button id="chat-room-close-button">X</button>
+    <button id="chat-room-close-button" class="sb-hidden">X</button>
   </div>
 
   <div

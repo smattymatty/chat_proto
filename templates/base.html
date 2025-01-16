@@ -26,6 +26,7 @@
 
     {% block javascript %}{% endblock %}
     <script>
+        console.log("Hello World");
         function scrollToBottom() {
             const container = document.getElementById("messages");
             if (container == null) {
@@ -34,8 +35,8 @@
             container.scrollTop = container.scrollHeight;
         }
     </script>
-        <script type="module" src="{% static 'js/chat_room.mjs' %}" defer>
-        </script>
+    <script type="module" src="{% static 'js/chat_room.mjs' %}" defer>
+    </script>
 
 </body>
 </html>

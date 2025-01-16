@@ -3,5 +3,3 @@ venv/
 
 # Ignore environment variables file
 .env
-
-db.sqlite3
