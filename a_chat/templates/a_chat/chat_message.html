@@ -1,20 +1,23 @@
 
 <li>
-    {% if message.author == user %}
-    <div class="sb-flex sb-items-end sb-justify-end sb-flex-col sb-w-full">
-    <span class="message-username own-message-username">
-        {{ message.author.username }}
-    </span>
+    <div class="sb-flex sb-justify-end sb-flex-row">
+    {% if chat_message.author == user %}
+
+    <div class="sb-pb-1 sb-flex sb-items-center sb-justify-center sb-w-full sb-grow">
+        <p class="message-body">
+            {{ chat_message.body }}
+        </p>
     </div>
-    <p class="message-body">
-    {{ message.body }}
-    </p>
+    <!-- name comes after the message -->
+    {% include 'a_chat/partials/username_in_message.html' with chat_message=chat_message %}
     {% else %}
-    <span class="message-username">
-        {{ message.author.username }}
-    </span>
-    <p class="message-body">
-    {{ message.body }}
-    </p>
+    <!-- name comes before the message -->
+    {% include 'a_chat/partials/username_in_message.html' with chat_message=chat_message %}
+    <div class="sb-pb-1 sb-flex sb-items-center sb-justify-center sb-w-full sb-grow">
+        <p class="message-body">
+            {{ chat_message.body }}
+        </p>
+    </div>
     {% endif %}
+    </div>
 </li>

@@ -8,10 +8,13 @@
 >
   <div
     id="chat-room-header"
-    class="sb-flex sb-items-center sb-justify-end sb-w-full sb-gap-2"
+    class="sb-flex sb-items-center sb-justify-end sb-w-full 
+    sb-gap-2"
   >
+    <button id="chat-room-settings-button" class="sb-hidden">
+      {% include 'icons/gear.html' %}
+    </button>
     <button id="chat-room-plus-button" class="sb-hidden">+</button>
-    <button id="chat-room-expand-button" class="sb-hidden">></button>
 
     <button id="chat-room-close-button" class="sb-hidden">X</button>
   </div>
@@ -20,13 +23,22 @@
     class="sb-flex sb-grow sb-items-center sb-justify-center sb-flex-col"
   >
     <ul
-      id="messages"
+      id="chat-messages"
       class="chatroom-messages"
     >
-      {% for message in messages reversed %}
+      {% for chat_message in chat_messages reversed %}
         {% include 'a_chat/chat_message.html' %}
       {% endfor %}
     </ul>
+    <div id="chat-settings" class="sb-hidden chatroom-messages sb-pb-2 sb-pt-4">
+      <div class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-full">
+          <h3 class="sb-text-xl sb-font-semibold sb-mb-4">Settings</h3>
+          <div class="sb-w-3/4 sb-border-t-4 sb-border-primary-75"></div>
+          <div class="sb-space-y-3">
+            <p>Settings</p>
+          </div>
+      </div>
+    </div>
   </div>
 
   <form
@@ -40,4 +52,7 @@
     {% csrf_token %}
     {{ form }}
   </form>
+  <div class="resize-handle sb-absolute sb-right-0 sb-top-0 
+  sb-bottom-0 sb-w-1 sb-cursor-ew-resize sb-bg-primary-25 
+  sb-hover:bg-primary"></div>
 </div>

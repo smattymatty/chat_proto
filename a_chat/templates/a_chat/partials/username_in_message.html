@@ -1,0 +1,26 @@
+<div class="sb-flex sb-flex-col">
+    <a class="username-link sb-flex sb-flex-col sb-items-start sb-cursor-pointer"
+        href="{% url 'users:profile' chat_message.author.username %}"
+    >
+        {% if chat_message.author == user %}
+            <span class="message-username own-message-username">
+                {{ chat_message.author.username }}
+            </span>
+        {% else %}
+            <span class="message-username">
+                {{ chat_message.author.username }}
+            </span>
+        {% endif %}
+    </a>
+    <div class="sb-pb-1 sb-flex sb-grow message-time sb-secondary 
+{% if chat_message.author == user %}
+    sb-justify-end 
+{% else %}
+    sb-justify-start
+{% endif %}
+    sb-px-2 sb-items-end">
+            <span class="chat-time"></span>
+                {{ chat_message.created_at|date:"M d, H:i" }}
+            </span>
+    </div>
+</div>

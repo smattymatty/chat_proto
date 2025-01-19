@@ -1,5 +1,6 @@
 body {
   background-color: rgb(20, 24, 28);
+  overflow-x: hidden;
 }
 
 .chatroom-messages {
@@ -25,14 +26,13 @@ body {
 }
 
 .chatroom-messages li {
-  padding-top: 0.2rem;
-  padding-bottom: 0.4rem;
   border-bottom: 1px solid #e5e7eb;
   text-align: left;
 }
 
 .message-username {
   color: rgba(0, 0, 0, 0.466);
+  min-width: 12rem;
   font-weight: bold;
   border-bottom: 1px solid rgba(0, 0, 0, 0.308);
   border-right: 1px solid rgba(0, 0, 0, 0.308);
@@ -42,11 +42,23 @@ body {
   padding-left: 0.3rem;
   border-bottom-right-radius: 10%;
   box-shadow: 1px 1px 2px 0 rgba(0, 0, 0, 0.582);
+  text-align: center;
+}
+
+.username-link {
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.username-link:hover {
+  border: 6px solid
+    color-mix(in srgb, var(--primary-color, #3b82f6) 25%, transparent);
+  border-radius: 7%;
 }
 
 .own-message-username {
   color: rgba(0, 82, 0, 0.603);
-  text-align: right;
   font-weight: bold;
   border-bottom: 1px solid rgba(0, 82, 0, 0.603);
   border-left: 1px solid rgba(0, 82, 0, 0.603);
@@ -107,13 +119,36 @@ body {
   border-radius: 15%;
   border: #00000000;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out !important;
 }
 
 .reopen-chat-button {
   position: fixed;
-  bottom: 33%;
+  bottom: 1rem;
+  left: 1rem;
   margin-bottom: 2rem;
   cursor: pointer;
-  transform: translateX(-110%);
+  transform: translateX(-120%);
+}
+
+.resize-handle {
+  transition: background-color 0.2s ease;
+}
+
+.resize-handle:hover {
+  width: 4px;
+}
+
+svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.chat-holder {
+  bottom: 0;
+  left: 0;
+}
+
+.message-time {
+  font-size: 0.75rem;
 }

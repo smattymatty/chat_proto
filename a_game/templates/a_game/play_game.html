@@ -1,16 +1,16 @@
 {% extends 'layouts/blank.html' %}
 
 {% block content %}
-<div class="sb-flex sb-flex-col sb-gap-4 sb-secondary">
+<div class="sb-flex sb-flex-col sb-gap-4 sb-secondary game-holder">
   <a href="{% url 'game:home' %}">
     <button class="sb-text-center w-full sb-p-2 sb-cursor-pointer sb-mt-2">
     Back
     </button>
   </a>
-    <h1>Play Game</h1>
+    <h1>{{ game.name }}</h1>
     <h2>State: <span id="game-state">{{ game.state }}</span></h2>
     <span>{{ game.created_at }}</span>
-    <p class="sb-text-center">Play a game</p>
+    <p class="sb-text-center">{{game.type}}</p>
       {% if game.state == 'in_queue' %}
         <button 
         id="state-change-button"
@@ -31,7 +31,7 @@
 
 
 
-<div class="sb-absolute sb-bottom-0 sb-w-full">
+<div class="sb-w-full chat-holder">
   <div class="sb-flex sb-items-center sb-justify-center sb-flex-col sb-w-full">
     <div class="sb-flex sb-w-full">
       <div 
@@ -39,11 +39,11 @@
       hx-trigger="load"
       hx-get="/chat/chatroom/{{ chat_room.name }}/"
       ></div>
-      <div 
-      id="online-count"
-      hx-trigger="load"
-      hx-get="/chat/online_count/{{ chat_room.name }}/"
-      ></div>
+      <div
+        id="online-count"
+        hx-trigger="load"
+        hx-get="/chat/online_count/{{ chat_room.name }}/"
+        ></div>
     </div>
   </div>
 </div>

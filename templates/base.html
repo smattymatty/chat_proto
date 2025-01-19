@@ -28,14 +28,14 @@
     <script>
         console.log("Hello World");
         function scrollToBottom() {
-            const container = document.getElementById("messages");
+            const container = document.getElementById("chat-messages");
             if (container == null) {
                 return;
             }
             container.scrollTop = container.scrollHeight;
         }
     </script>
-    <script type="module" src="{% static 'js/chat_room.mjs' %}" defer>
+    <script type="module" src="{% static 'js/chat_room/chat_room.mjs' %}" defer>
     </script>
 
 </body>

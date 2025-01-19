@@ -45,7 +45,7 @@ def open_chatroom(request, room_name):
             message.save()
             print(f"Message Saves: {message}")
             context = {
-                'message': message,
+                'chat_message': message,
                 'user': request.user,
             }
             return render(
@@ -55,7 +55,7 @@ def open_chatroom(request, room_name):
             print(f"Form Errors: {form.errors}")
     context = {
         'chat_room': chat_room,
-        'messages': messages,
+        'chat_messages': messages,
         'form': form,
         'user': request.user,
     }
