@@ -76,7 +76,7 @@ class ChatroomConsumer(WebsocketConsumer):
         message_id = event['message_id']
         message = ChatMessage.objects.get(id=message_id)
         context = {
-            'message': message,
+            'chat_message': message,
             'user': self.user,
         }
         html = render_to_string(
